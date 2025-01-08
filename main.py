@@ -19,7 +19,7 @@ def play_beat(beat):
     data = {
         "id": user_beat_id,
         "sponsored":False,
-        "store_type": "<script>alert(1);</script>"
+        "store_type": "marketplace"
     }
     headers = {
         "Host": "main.v2.beatstars.com",
