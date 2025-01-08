@@ -3,7 +3,6 @@ import re
 import random
 import sys
 import time
-
 # Beatstars Plays B0t (not a DOS!)
 def play_beat(beat):
     url = "https://main.v2.beatstars.com/stats/track_play"
@@ -13,7 +12,6 @@ def play_beat(beat):
         user_beat_id = re.search("\-\d+$",valid_beat_url).group()
     else:
         raise Exception("invaild beat url try again...")
-    
     if not user_beat_id:
         raise Exception("unable to parse beat id from url ending :( contact script owner")
     data = {
@@ -23,7 +21,7 @@ def play_beat(beat):
     }
     headers = {
         "Host": "main.v2.beatstars.com",
-        "User-Agent": "<script>alert(1);</script>",}
+        "User-Agent": "",}
     print()
     response = requests.post(url,json=data,headers=headers)
     print(response.content)
